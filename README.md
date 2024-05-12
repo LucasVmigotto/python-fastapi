@@ -40,6 +40,60 @@ A template repository with an API developed in [Python](https://www.python.org/)
 
 3. Happy coding 😁
 
+### Useful Docker commands
+
+#### Containers
+
+* List all Docker containers
+
+    ```bash
+    docker ps -a
+    ```
+
+* Remove Docker Compose containers
+
+    ```bash
+    docker compose rm --stop -f
+    ```
+
+* Prune containers
+
+    ```bash
+    docker container prune --force
+    ```
+
+#### Images
+
+* List all Docker images
+
+    ```bash
+    docker ls -a
+    ```
+
+* Remove Docker _dangling_ images
+
+    ```bash
+    docker image rm -f $(docker image ls --filter "dangling=true" -aq)
+    ```
+
+    > **WARNING**: If you want to remove **ALL** Docker images, just remove the `--filter` flag and argument
+    >
+    > `docker image rm -f $(docker image ls -aq)`
+
+#### Volumes
+
+* List all Docker volumes
+
+    ```bash
+    docker volume ls
+    ```
+
+* Prune Docker volumes
+
+    ```bash
+    docker volume prune --force
+    ```
+
 ## Running the application
 
 ### Inside the Visual Studio Code
